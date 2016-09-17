@@ -186,8 +186,17 @@ console.log(printProcessedOrders(arrayOfObjects));
 
         Go ahead and create some more objects and pass them to this function. Have fun with it.
 */
+var sumObj = {
+    a: 10,
+    b: 18,
+    result: undefined
+};
+    function objectAddition (animal){
+        animal.result = animal.a + animal.b;
+        return animal;
 
-
+    }
+console.log(objectAddition(sumObj));
 /*
     # Print sum function and add as new key-value
         Declare a new function named printObj and a single parameter which will be the object from the challenge just above. Within this function you are to print to the screen a message of the operation performed. For Example:
@@ -209,8 +218,15 @@ console.log(printProcessedOrders(arrayOfObjects));
 
         Invoke your function and pass in your object (which should be `plainBox`), store the result to a variable named plainBoxResult and use `console.log` to inspect your results.
  */
+ function putInPlainBox(obj){
+    for (var i =0; i < 10; i++){
+        var randomNumbers = Math.floor(Math.random()*100);
+        obj.contents.push(randomNumbers);
 
-
+    }
+    return obj;
+ }
+console.log(putInPlainBox(plainBox));
 /*
     # Detecting transmission
         Declare a function named detectingTranmission and a single parameter which will be an object. Within this function you will check to see if the car has an automatic or manual transmission and print the results on screen.
@@ -264,3 +280,15 @@ console.log(printProcessedOrders(arrayOfObjects));
         'Victor, age 19, is riding dirty!'
  */
 
+var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+
+var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15];
+
+function addPassengers(car, names, age){
+    for(var i = 0; i<names.length; i++){
+        var newPlainPerson = {};
+        car.passengers.push(buildPerson(newPlainPerson, names[i], age[i]));
+    }
+return car;
+}
+console.log(addPassengers(stockCar, passengerList, passengerAges));
